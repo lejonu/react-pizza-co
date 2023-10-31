@@ -79,15 +79,27 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-
-      {pizzaData.length > 0 && (
+      {/* {pizzaData.length > 0 && (
         <ul className="pizzas">
           {pizzaData.map((pizza, index) => {
             return <Pizza pizzaObj={pizza} key={index} />;
           })}
         </ul>
-      )}
+      )} */}
 
+      {/* ternary operator */}
+      {pizzaData.length > 0 ? (
+        <ul className="pizzas">
+          {pizzaData.map((pizza, index) => {
+            return <Pizza pizzaObj={pizza} key={index} />;
+          })}
+        </ul>
+      ) : (
+        <p>
+          We're still working on our menu. Please come back
+          later :)
+        </p>
+      )}
       {/* <Pizza
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, spinach, and ricotta cheese"
