@@ -116,19 +116,17 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  if (props.pizzaObj.soldOut) return null;
+// Destructuring needs to be the exact name passed by
+function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null;
 
   return (
     <li className="pizza">
-      <img
-        src={props.pizzaObj.photoName}
-        alt="Pizza Spinaci"
-      />
+      <img src={pizzaObj.photoName} alt="Pizza Spinaci" />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price + 3}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price + 3}</span>
       </div>
     </li>
   );
