@@ -89,11 +89,21 @@ function Menu() {
 
       {/* ternary operator */}
       {pizzaData.length > 0 ? (
-        <ul className="pizzas">
-          {pizzaData.map((pizza, index) => {
-            return <Pizza pizzaObj={pizza} key={index} />;
-          })}
-        </ul>
+        // 2 or more elements without a parent here.
+        // If you need a key you can use <React.Fragment key={key}> </React.Fragment>
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to
+            choose from. All from our stone oven, all
+            organic, all delicious.
+          </p>
+
+          <ul className="pizzas">
+            {pizzaData.map((pizza, index) => {
+              return <Pizza pizzaObj={pizza} key={index} />;
+            })}
+          </ul>
+        </>
       ) : (
         <p>
           We're still working on our menu. Please come back
