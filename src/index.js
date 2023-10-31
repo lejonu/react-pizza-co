@@ -150,19 +150,27 @@ function Footer() {
 
   return (
     <footer className="footer">
+      {isOpen ? (
+        <Order />
+      ) : (
+        <p>
+          We're happy to welcome you between 12:00 and 22:00
+        </p>
+      )}
+    </footer>
+  );
+
+  function Order() {
+    return (
       <div className="order">
         <h3 style={{ textAlign: "center" }}>
           {new Date().toLocaleTimeString()}
         </h3>
-        <p>
-          {isOpen
-            ? "We're currently open "
-            : "Sorry we're closed"}
-        </p>
+        <p></p>
         <button className="btn">Order</button>
       </div>
-    </footer>
-  );
+    );
+  }
 
   // return React.createElement(
   //   "footer",
